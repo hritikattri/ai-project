@@ -1,5 +1,7 @@
 # Project details
 
+Build a Bedrock Agent that can answer user questions based on some input document (here: smartphone user manual). For this, we will use Bedrock Knowledge Base using Amazon Aurora as the vector store and Amazon’s Titan Text Embeddings model for document processing. The agent, powered by Amazon’s Nova Micro model, will depend on this knowledge base to generate answers.
+
 <img width="1888" height="1004" alt="image" src="https://github.com/user-attachments/assets/01ea3b6b-5d89-4216-943d-f39159a8dd09" />
 
 ### 1. Upload a file to S3.
