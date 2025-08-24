@@ -1,5 +1,8 @@
 # Project details
 
+<img width="1888" height="1004" alt="image" src="https://github.com/user-attachments/assets/01ea3b6b-5d89-4216-943d-f39159a8dd09" />
+
+
 ### 1. Upload a file to S3.
 
 ### 2. Creating Aurora Cluster
