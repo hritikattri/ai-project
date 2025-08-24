@@ -1,32 +1,16 @@
-# Index
+# Project details
 
-1. Details of AWS Bedrock
-2. Code Generation using Bedrock model
+### 1. Upload a file to S3.
 
-# 1. Details of AWS Bedrock
+### 2. Creating Aurora Cluster
 
-Models preferred for tasks (later reference):
+- We need Postgres DB engine because it supports the extensions required to use Aurora as a vector store. A vector store is a store for high-dimensional storage and retrieval (eg: embedding vectors).
 
-| Task | Best model |
-| ---- | ---------- |
-| Text generation | Amazon Titan, AI21 Jurassic |
-| Code generation | Anthropic Claude |
-| Image generation | Stability AI Stable Diffusion |
-| Sentiment analysis | Amazon Titan |
-| Conversational AI |Anthropic Claude, AI21 Jurassic |
-| Semantic search | Cohere Command |
+### 3. Configure RDS cluster for storing Bedrock Knowledge Base
 
-- Have used Claude 3 Sonnet for code generation in this project
+- Create table for embeddings:
+- For the user created, add its credential as a secret in AWS Secret Manager (Type: "Credentials for Amazon RDS database")
 
-# 2. Using Bedrock model
+### 4. Create the Amazon Bedrock Knowledge Base 
 
-- "Bedrock Configurations" -> "Model Access" -> "Claude 3 Sonnet". If "Available to Request" is the status, click "Request model access". Fill form and submit.
-- "Bedrock Providers" -> "Anthropic" -> "Claude Sonnet 3" -> Save `modelID`.
-
-***Using AWS SDK for Bedrock code generation***:
-
-- `boto.client('bedrock-runtime')` -> Get Bedrock client from aws sdk.
-- `client.converse(modelID, message, inferenceConfig={"maxTokens":4096,"temperature":0.5}, additionalModelRequestFields={"top_k":250})`:
-  - `maxTokens` - Maximum number of tokens for model's response (embedding size) - 4096 here.
-  - `temperature` - Controls amount of creativity/novelty in the response.
-  - `top_k` - Used as a filter to give more priority to specific tokens. (Here, top 250 tokens).
+TODO: Adding steps here for reference
